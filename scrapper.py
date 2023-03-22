@@ -71,18 +71,20 @@ a = add_list(vacancy_list2, vacancy_list3)
 for i in range(len(a)):
     vacancy_list.append(a[i])
 
-# first time needs to be active to write vacancies!!!
-# with open('vacancy_links.json', 'r+', encoding='utf-8') as vac:
+# # first time needs to be active to write vacancies!!!
+# with open('vacancy_links.json', 'w+', encoding='utf-8') as vac:
 #     json.dump(vacancy_list, vac, ensure_ascii=False)
 
 with open('vacancy_links.json', 'r+', encoding='utf-8') as vac:
-    data = json.load(vac)
+    data = vac.read()
     for item in vacancy_list:
-        # print(item)
-        if item in data:
+        itemstr = str(item)
+        if itemstr in data:
             print("old vacancy>>>", item)
         else:
-            json.dump(item, vac, ensure_ascii=False)
-            print("new vacancy", item)
+            json.dump(itemstr, vac, ensure_ascii=False)
+            # json.dumps(item)
+            print("new vacancy>>>", item)
+
 
 
