@@ -84,7 +84,8 @@ with open('vacancy_links.json', 'r+', encoding='utf-8') as vac:
         else:
             json.dump(itemstr, vac, ensure_ascii=False)
             # json.dumps(item)
-            print("new vacancy>>>", item)
+            print("----new vacancy----", item)
+
 
 
 
